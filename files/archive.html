@@ -1,6 +1,6 @@
 <h1>{{'episode_archive' | t}}</h1>
 
-<ul class="unstyled archive">
+<ul class="unstyled archive .backdrop .backdrop--shadow">
   {% for episode in episodes %}
     <li>
       <a href="{{episode.url}}" title="{{episode.title}}">{{episode.title}}</a>
