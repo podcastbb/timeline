@@ -11,6 +11,9 @@
       {{'by' |t}} {{podcast.authors}}
     </small>
   
+    <br />
+    <br />
+    <br />
     {% if podcast.subscribe_button_data.configuration.enabled %}
       {{podcast.subscribe_button}}
     {% else %}
@@ -22,9 +25,6 @@
     </ul>
     {% endif %}
 
-    <br />
-    <br />
-    <br />
     {% assign connections = podcast.connections %}
 
   </div>
