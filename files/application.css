@@ -10,7 +10,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 body {
   color: #222;
   font-family: Helvetica, Arial, sans-serif;
-  background: url(https://podcastbb.de/fileadmin/template/images/background.jpg) 0 / cover fixed;
+  background: url(//podcastbb.de/fileadmin/template/images/background.jpg) 0 / cover fixed;
 	background-position: center;
 }
 
@@ -522,7 +522,7 @@ hr {
     left: 0;
     filter: blur(5px);
     z-index: -1;
-    background: url(https://podcastbb.de/fileadmin/template/images/background.jpg) 0 / cover fixed;
+    background: url(//podcastbb.de/fileadmin/template/images/background.jpg) 0 / cover fixed;
     background-position: center;
 }
 
