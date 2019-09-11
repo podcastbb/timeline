@@ -1,0 +1,55 @@
+{% if blog.announcement != blank %}
+  <div class="announcement">
+    {{blog.announcement}}
+  </div>
+{% endif %}
+
+<ul class="timeline">
+  {% for episode in episodes %}
+    {% assign prev_index = forloop.index - 1 %}
+    {% capture this_year %}{{ episode.published_at| date: "%Y" }}{% endcapture %}
+    {% capture this_month %}{{ episode.published_at | date: "%B" }}{% endcapture %}
+    {% capture next_year %}{{ episodes[prev_index].published_at | date: "%Y" }}{% endcapture %}
+    {% capture next_month %}{{ episodes[prev_index].published_at| date: "%B" }}{% endcapture %}
+
+    {% if forloop.first %}
+    <li class="year">{{this_year}}</li>
+    <li class="month">{{ this_month }}</li>
+    <li>
+      <ul>
+    {% endif %}
+    
+    <li class="event">
+      <h3><a href="{{ episode.url }}">{{ episode.title }}</a></h3>
+      <h4>{{ episode.subtitle }}</h4>
+
+      {{episode.player}}
+    </li>
+
+    {% if forloop.last %}
+      </ul>
+      </li>
+    {% else %}
+        {% if this_year != next_year %}
+        </ul>
+        <li class="year">{{next_year}}</li>
+        <li class="month">{{next_month}}</li>
+        <li>
+        <ul>
+        {% else %}    
+            {% if this_month != next_month %}
+           </ul>
+           </li>
+            <li class="month">{{next_month}}</li>
+            <li>
+            <ul>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<div class="pagination">
+  {{ pagination.previous_page }}
+  {{ pagination.next_page }}
+</div>
