@@ -503,6 +503,11 @@ hr {
   margin-top: 37px;
 }
 
+.section-main h1
+{
+  margin-top: 0;
+}
+
 
 .backdrop
 {
